@@ -5,6 +5,7 @@ import com.dio.api.bank.dominio.repository.ClienteRepository;
 import com.dio.api.bank.servico.ClienteService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
@@ -29,4 +30,10 @@ public class ClienteServiceImpl implements ClienteService {
         }
         return clienteRepository.save(clienteToCreate);
     }
+    @Override
+    public List<Cliente> buscarTodos() {
+        return clienteRepository.findAll();
+    }
+
+
 }

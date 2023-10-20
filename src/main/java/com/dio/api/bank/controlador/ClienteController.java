@@ -2,11 +2,13 @@ package com.dio.api.bank.controlador;
 
 import com.dio.api.bank.dominio.model.Cliente;
 import com.dio.api.bank.servico.ClienteService;
+import com.dio.api.bank.servico.impl.ClienteServiceImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.util.List;
 
 @RestController
 @RequestMapping("/clientes")
@@ -21,6 +23,11 @@ public class ClienteController {
     public ResponseEntity<Cliente>  findById(@PathVariable Long id){
         var cliente = clienteService.findById(id);
         return ResponseEntity.ok(cliente);
+    }
+
+    @GetMapping("/")
+    public List<Cliente> buscarTodos(){
+        return clienteService.buscarTodos();
     }
 
     @PostMapping
