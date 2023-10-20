@@ -13,14 +13,7 @@ classDiagram
     -Novidades[] novidades
   }
 
-  class ContaCorrente {
-    -String numero
-    -String agencia
-    -Number saldo
-    -Number limite
-  }
-
-  class ContaPoupanca {
+  class Conta {
     -String numero
     -String agencia
     -Number saldo
@@ -42,8 +35,7 @@ classDiagram
     -String descricao
   }
 
-  Cliente "1" *-- "1" ContaCorrente
-  Cliente "1" *-- "1" ContaPoupanca
+  Cliente "1" *-- "1" Conta
   Cliente "1" *-- "N" Recurso
   Cliente "1" *-- "1" Cartao
   Cliente "1" *-- "N" Novidades
