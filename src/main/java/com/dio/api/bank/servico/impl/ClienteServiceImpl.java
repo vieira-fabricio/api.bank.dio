@@ -24,7 +24,7 @@ public class ClienteServiceImpl implements ClienteService {
 
     @Override
     public Cliente create(Cliente clienteToCreate) {
-       if (clienteRepository.existsByContaNumero(clienteToCreate.getContaCorrente().getNumero())){
+       if (clienteRepository.existsByContaNumero(clienteToCreate.getConta().getNumero())){
            throw new IllegalArgumentException("Este número de conta já existe!");
         }
         return clienteRepository.save(clienteToCreate);

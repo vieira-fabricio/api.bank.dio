@@ -3,8 +3,8 @@ package com.dio.api.bank.dominio.model;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
-@MappedSuperclass
-public abstract class Conta {
+@Entity(name = "tb_conta")
+public class Conta {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

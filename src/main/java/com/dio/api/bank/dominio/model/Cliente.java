@@ -11,9 +11,7 @@ public class Cliente {
     private Long id;
     private String nome;
     @OneToOne(cascade = CascadeType.ALL)
-    private ContaCorrente contaCorrente;
-    @OneToOne(cascade = CascadeType.ALL)
-    private ContaPoupanca contaPoupanca;
+    private Conta conta;
     @OneToOne(cascade = CascadeType.ALL)
     private Cartao cartao;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
@@ -37,20 +35,12 @@ public class Cliente {
         this.nome = nome;
     }
 
-    public ContaCorrente getContaCorrente() {
-        return contaCorrente;
+    public Conta getConta() {
+        return conta;
     }
 
-    public void setContaCorrente(ContaCorrente contaCorrente) {
-        this.contaCorrente = contaCorrente;
-    }
-
-    public ContaPoupanca getContaPoupanca() {
-        return contaPoupanca;
-    }
-
-    public void setContaPoupanca(ContaPoupanca contaPoupanca) {
-        this.contaPoupanca = contaPoupanca;
+    public void setConta(Conta conta) {
+        this.conta = conta;
     }
 
     public Cartao getCartao() {
