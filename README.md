@@ -6,8 +6,7 @@ Java RESTful API criada para o bootcamp do Santander em java e angular
 classDiagram
   class Cliente {
     -String nome
-    -ContaCorrente contaCorrente
-    -ContaPoupanca contaPoupanca
+    -Conta conta
     -Recurso[] recursos
     -Cartao cartao
     -Novidades[] novidades
